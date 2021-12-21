@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "echo \"No tests specified\""
   },
   "keywords": [
     "near",
