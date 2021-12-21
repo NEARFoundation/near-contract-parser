@@ -1,0 +1,36 @@
+{
+  "name": "near-contract-parser",
+  "version": "0.1.0",
+  "description": "Parse NEAR smart contract WASM code.",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "build": "tsc"
+  },
+  "keywords": [
+    "near",
+    "nearprotocol",
+    "near-protocol",
+    "blockchain",
+    "smart-contract",
+    "webassembly",
+    "wasm"
+  ],
+  "author": "Jacob Lindahl <jacob@near.foundation>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.3",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@webassemblyjs/wasm-parser": "^1.11.1"
+  }
+}
