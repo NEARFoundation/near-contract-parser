@@ -34,18 +34,18 @@ export const interfaces: Readonly<
       {
         name: 'ft_transfer',
         args: [
-          { name: 'receiver_id', type: JsonType.String },
-          { name: 'amount', type: JsonType.String },
-          { name: 'memo', type: [JsonType.String, JsonType.Null] },
+          { name: 'receiver_id', type: 'string' },
+          { name: 'amount', type: 'string' },
+          { name: 'memo', type: ['string', 'null'] },
         ],
       },
       {
         name: 'ft_transfer_call',
         args: [
-          { name: 'receiver_id', type: JsonType.String },
-          { name: 'amount', type: JsonType.String },
-          { name: 'memo', type: [JsonType.String, JsonType.Null] },
-          { name: 'msg', type: JsonType.String },
+          { name: 'receiver_id', type: 'string' },
+          { name: 'amount', type: 'string' },
+          { name: 'memo', type: ['string', 'null'] },
+          { name: 'msg', type: 'string' },
         ],
       },
       {
@@ -54,7 +54,7 @@ export const interfaces: Readonly<
       },
       {
         name: 'ft_balance_of',
-        args: [{ name: 'account_id', type: JsonType.String }],
+        args: [{ name: 'account_id', type: 'string' }],
       },
     ],
   },
@@ -75,25 +75,25 @@ export const interfaces: Readonly<
       {
         name: 'nft_transfer',
         args: [
-          { name: 'receiver_id', type: JsonType.String },
-          { name: 'token_id', type: JsonType.String },
-          { name: 'approval_id', type: [JsonType.Number, JsonType.Null] },
-          { name: 'memo', type: [JsonType.String, JsonType.Null] },
+          { name: 'receiver_id', type: 'string' },
+          { name: 'token_id', type: 'string' },
+          { name: 'approval_id', type: ['number', 'null'] },
+          { name: 'memo', type: ['string', 'null'] },
         ],
       },
       {
         name: 'nft_transfer_call',
         args: [
-          { name: 'receiver_id', type: JsonType.String },
-          { name: 'token_id', type: JsonType.String },
-          { name: 'approval_id', type: [JsonType.Number, JsonType.Null] },
-          { name: 'memo', type: [JsonType.String, JsonType.Null] },
-          { name: 'msg', type: JsonType.String },
+          { name: 'receiver_id', type: 'string' },
+          { name: 'token_id', type: 'string' },
+          { name: 'approval_id', type: ['number', 'null'] },
+          { name: 'memo', type: ['string', 'null'] },
+          { name: 'msg', type: 'string' },
         ],
       },
       {
         name: 'nft_token',
-        args: [{ name: 'token_id', type: JsonType.String }],
+        args: [{ name: 'token_id', type: 'string' }],
       },
     ],
   },
@@ -114,28 +114,28 @@ export const interfaces: Readonly<
       {
         name: 'nft_approve',
         args: [
-          { name: 'token_id', type: JsonType.String },
-          { name: 'account_id', type: JsonType.String },
-          { name: 'msg', type: [JsonType.String, JsonType.Null] },
+          { name: 'token_id', type: 'string' },
+          { name: 'account_id', type: 'string' },
+          { name: 'msg', type: ['string', 'null'] },
         ],
       },
       {
         name: 'nft_revoke',
         args: [
-          { name: 'token_id', type: JsonType.String },
-          { name: 'account_id', type: JsonType.String },
+          { name: 'token_id', type: 'string' },
+          { name: 'account_id', type: 'string' },
         ],
       },
       {
         name: 'nft_revoke_all',
-        args: [{ name: 'token_id', type: JsonType.String }],
+        args: [{ name: 'token_id', type: 'string' }],
       },
       {
         name: 'nft_is_approved',
         args: [
-          { name: 'token_id', type: JsonType.String },
-          { name: 'approved_account_id', type: JsonType.String },
-          { name: 'approval_id', type: [JsonType.Number, JsonType.Null] },
+          { name: 'token_id', type: 'string' },
+          { name: 'approved_account_id', type: 'string' },
+          { name: 'approval_id', type: ['number', 'null'] },
         ],
       },
     ],
