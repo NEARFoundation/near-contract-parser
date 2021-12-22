@@ -1,6 +1,6 @@
 import { JsonType } from './JsonType';
 
-export const enum StandardInterfaceId {
+export enum StandardInterfaceId {
   NEP141 = 'nep141',
   NEP148 = 'nep148',
   NEP171 = 'nep171',
@@ -8,14 +8,24 @@ export const enum StandardInterfaceId {
   NEP178 = 'nep178',
 }
 
+/**
+ * Well-known smart contract interface specification
+ */
 export interface StandardInterface {
+  /** Unique interface ID */
   id: StandardInterfaceId;
+  /** Human-readable interface name */
   name: string;
+  /** Methods provided by interface */
   methods: StandardInterfaceMethod[];
 }
 
 export interface StandardInterfaceArgument {
   name: string;
+  /**
+   * An argument can support one or multiple types
+   * (e.g. Rust's `Option<String>` becomes `['string', 'null']`)
+   */
   type: JsonType | JsonType[];
 }
 
@@ -24,6 +34,9 @@ export interface StandardInterfaceMethod {
   args: StandardInterfaceArgument[];
 }
 
+/**
+ * Mapping interface ID to interface specification
+ */
 export const interfaces: Readonly<
   Record<StandardInterfaceId, StandardInterface>
 > = Object.freeze({

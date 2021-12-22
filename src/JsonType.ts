@@ -1,3 +1,6 @@
+/**
+ * Data types supported by JSON format
+ */
 export type JsonType =
   | 'string'
   | 'number'
