@@ -120,9 +120,7 @@ export const interfaces: Readonly<
       },
       {
         name: 'nft_token',
-        args: [
-          { name: 'token_id', type: 'string' },
-        ],
+        args: [{ name: 'token_id', type: 'string' }],
       },
       {
         name: 'nft_transfer',
