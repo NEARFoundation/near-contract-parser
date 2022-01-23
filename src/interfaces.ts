@@ -118,6 +118,31 @@ export const interfaces: Readonly<
         name: 'nft_metadata',
         args: [],
       },
+      {
+        name: 'nft_token',
+        args: [
+          { name: 'token_id', type: 'string' },
+        ],
+      },
+      {
+        name: 'nft_transfer',
+        args: [
+          { name: 'receiver_id', type: 'string' },
+          { name: 'token_id', type: 'string' },
+          { name: 'approval_id', type: ['string', 'null'] },
+          { name: 'memo', type: ['string', 'null'] },
+        ],
+      },
+      {
+        name: 'nft_transfer_call',
+        args: [
+          { name: 'receiver_id', type: 'string' },
+          { name: 'token_id', type: 'string' },
+          { name: 'approval_id', type: ['string', 'null'] },
+          { name: 'memo', type: ['string', 'null'] },
+          { name: 'msg', type: 'string' },
+        ],
+      },
     ],
   },
   [StandardInterfaceId.NEP178]: {
