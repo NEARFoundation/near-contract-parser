@@ -11,6 +11,7 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "build": "tsc",
+    "rollup": "npx rollup --config rollup.config.js",
     "test": "echo \"No tests specified\""
   },
   "keywords": [
@@ -25,11 +26,15 @@
   "author": "Jacob Lindahl <jacob@near.foundation>",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "@types/node": "^17.0.2",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.3",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.4"
+    "rollup": "^2.66.1",
+    "typescript": "^4.5.4",
+    "uglifyjs": "^2.4.11"
   },
   "dependencies": {
     "@webassemblyjs/wasm-parser": "^1.11.1"
