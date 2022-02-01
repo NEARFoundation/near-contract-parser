@@ -11,6 +11,7 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "build": "tsc",
+    "rollup": "npx rollup lib/index.js --file dist/index.js --format umd --name 'nearContractParserUMD' & npx rollup lib/interfaces.js --file dist/interfaces.js --format umd --name 'nearContractParserUMD' & npx rollup lib/getProbableInterfaces.js --file dist/getProbableInterfaces.js --format umd --name 'nearContractParserUMD' & npx rollup lib/JsonType.js --file dist/JsonType.js --format umd --name 'nearContractParserUMD' & npx rollup lib/methods.js --file dist/methods.js --format umd --name 'nearContractParserUMD' & npx rollup lib/parseContract.js --file dist/parseContract.js --format umd --name 'nearContractParserUMD' & npx rollup lib/ParsedContract.js --file dist/ParsedContract.js --format umd --name 'nearContractParserUMD' & npx rollup lib/parseWasm.js --file dist/parseWasm.js --format umd --name 'nearContractParserUMD'",
     "test": "echo \"No tests specified\""
   },
   "keywords": [
@@ -32,6 +33,7 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@webassemblyjs/wasm-parser": "^1.11.1"
+    "@webassemblyjs/wasm-parser": "^1.11.1",
+    "rollup": "^2.66.1"
   }
 }
