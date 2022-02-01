@@ -29,12 +29,31 @@
         )
           __createBinding(exports, m, p);
     };
-  Object.defineProperty(exports, '__esModule', { value: true });
-  __exportStar(require('./getProbableInterfaces'), exports);
-  __exportStar(require('./interfaces'), exports);
-  __exportStar(require('./JsonType'), exports);
-  __exportStar(require('./methods'), exports);
-  __exportStar(require('./parseContract'), exports);
-  __exportStar(require('./ParsedContract'), exports);
-  __exportStar(require('./parseWasm'), exports);
+  (function (factory) {
+    if (typeof module === 'object' && typeof module.exports === 'object') {
+      var v = factory(require, exports);
+      if (v !== undefined) module.exports = v;
+    } else if (typeof define === 'function' && define.amd) {
+      define([
+        'require',
+        'exports',
+        './getProbableInterfaces',
+        './interfaces',
+        './JsonType',
+        './methods',
+        './parseContract',
+        './ParsedContract',
+        './parseWasm',
+      ], factory);
+    }
+  })(function (require, exports) {
+    Object.defineProperty(exports, '__esModule', { value: true });
+    __exportStar(require('./getProbableInterfaces'), exports);
+    __exportStar(require('./interfaces'), exports);
+    __exportStar(require('./JsonType'), exports);
+    __exportStar(require('./methods'), exports);
+    __exportStar(require('./parseContract'), exports);
+    __exportStar(require('./ParsedContract'), exports);
+    __exportStar(require('./parseWasm'), exports);
+  });
 });
