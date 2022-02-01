@@ -11,7 +11,8 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "build": "tsc",
-    "rollup": "npx rollup lib/index.js --file dist/index.js --format umd --name 'nearContractParserUMD' & npx rollup lib/interfaces.js --file dist/interfaces.js --format umd --name 'nearContractParserUMD' & npx rollup lib/getProbableInterfaces.js --file dist/getProbableInterfaces.js --format umd --name 'nearContractParserUMD' & npx rollup lib/JsonType.js --file dist/JsonType.js --format umd --name 'nearContractParserUMD' & npx rollup lib/methods.js --file dist/methods.js --format umd --name 'nearContractParserUMD' & npx rollup lib/parseContract.js --file dist/parseContract.js --format umd --name 'nearContractParserUMD' & npx rollup lib/ParsedContract.js --file dist/ParsedContract.js --format umd --name 'nearContractParserUMD' & npx rollup lib/parseWasm.js --file dist/parseWasm.js --format umd --name 'nearContractParserUMD'",
+    "rollup": "npx rollup lib/index.js --file dist/index.js --format umd --name nearContractParser",
+    "rollup2": "npx rollup lib/index.js --file dist/index.js --format umd --name 'nearContractParserUMD' & npx rollup lib/interfaces.js --file dist/interfaces.js --format umd --name 'nearContractParserUMD' & npx rollup lib/getProbableInterfaces.js --file dist/getProbableInterfaces.js --format umd --name 'nearContractParserUMD' & npx rollup lib/JsonType.js --file dist/JsonType.js --format umd --name 'nearContractParserUMD' & npx rollup lib/methods.js --file dist/methods.js --format umd --name 'nearContractParserUMD' & npx rollup lib/parseContract.js --file dist/parseContract.js --format umd --name 'nearContractParserUMD' & npx rollup lib/ParsedContract.js --file dist/ParsedContract.js --format umd --name 'nearContractParserUMD' & npx rollup lib/parseWasm.js --file dist/parseWasm.js --format umd --name 'nearContractParserUMD'",
     "test": "echo \"No tests specified\""
   },
   "keywords": [
@@ -30,10 +31,12 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.3",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+	  "@rollup/plugin-node-resolve": "^7.1.3",
+	  "rollup": "^2.66.1",
+	  "uglifyjs": "^2.4.11"
   },
   "dependencies": {
-    "@webassemblyjs/wasm-parser": "^1.11.1",
-    "rollup": "^2.66.1"
+    "@webassemblyjs/wasm-parser": "^1.11.1"
   }
 }

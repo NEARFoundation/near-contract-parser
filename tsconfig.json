@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "module": "UMD",
+    "module": "es2015",
     "declaration": true,
     "strict": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "outDir": "lib"
+	  "preserveConstEnums": true,
+	  "outDir": "lib"
+//	  "outFile": "./lib/bundle.js"
   },
   "include": ["src"],
   "exclude": ["node_modules"]
