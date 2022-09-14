@@ -6,7 +6,7 @@ Collection of utilities for parsing base64-encoded WASM smart contracts on [NEAR
 
 ## Installation
 
-```txt
+```text
 $ npm install --save near-contract-parser
 ```
 
