@@ -2,6 +2,7 @@ import { JsonType } from './JsonType';
 
 export enum StandardInterfaceId {
   NEP141 = 'nep141',
+  NEP145 = 'nep145',
   NEP148 = 'nep148',
   NEP171 = 'nep171',
   NEP177 = 'nep177',
@@ -68,6 +69,35 @@ export const interfaces: Readonly<
       },
       {
         name: 'ft_balance_of',
+        args: [{ name: 'account_id', type: 'string' }],
+      },
+    ],
+  },
+  [StandardInterfaceId.NEP145]: {
+    id: StandardInterfaceId.NEP145,
+    name: 'Storage Management (NEP-145)',
+    methods: [
+      {
+        name: 'storage_deposit',
+        args: [
+          { name: 'account_id', type: ['string', 'null'] },
+          { name: 'registration_only', type: ['boolean', 'null'] },
+        ],
+      },
+      {
+        name: 'storage_withdraw',
+        args: [{ name: 'amount', type: ['string', 'null'] }],
+      },
+      {
+        name: 'storage_unregister',
+        args: [{ name: 'force', type: ['boolean', 'null'] }],
+      },
+      {
+        name: 'storage_balance_bounds',
+        args: [],
+      },
+      {
+        name: 'storage_balance_of',
         args: [{ name: 'account_id', type: 'string' }],
       },
     ],
