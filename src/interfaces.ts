@@ -6,6 +6,7 @@ export enum StandardInterfaceId {
   NEP171 = 'nep171',
   NEP177 = 'nep177',
   NEP178 = 'nep178',
+  NEP330 = 'nep330',
 }
 
 /**
@@ -150,6 +151,16 @@ export const interfaces: Readonly<
           { name: 'approved_account_id', type: 'string' },
           { name: 'approval_id', type: ['number', 'null'] },
         ],
+      },
+    ],
+  },
+  [StandardInterfaceId.NEP330]: {
+    id: StandardInterfaceId.NEP330,
+    name: 'Source Metadata (NEP-330)',
+    methods: [
+      {
+        name: 'contract_source_metadata',
+        args: [],
       },
     ],
   },
