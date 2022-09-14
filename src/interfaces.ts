@@ -7,6 +7,7 @@ export enum StandardInterfaceId {
   NEP171 = 'nep171',
   NEP177 = 'nep177',
   NEP178 = 'nep178',
+  NEP199 = 'nep199',
   NEP330 = 'nep330',
 }
 
@@ -180,6 +181,30 @@ export const interfaces: Readonly<
           { name: 'token_id', type: 'string' },
           { name: 'approved_account_id', type: 'string' },
           { name: 'approval_id', type: ['number', 'null'] },
+        ],
+      },
+    ],
+  },
+  [StandardInterfaceId.NEP199]: {
+    id: StandardInterfaceId.NEP199,
+    name: 'Royalties and Payouts (NEP-199)',
+    methods: [
+      {
+        name: 'nft_payout',
+        args: [
+          { name: 'token_id', type: 'string' },
+          { name: 'balance', type: 'string' },
+          { name: 'max_len_payout', type: 'number' },
+        ],
+      },
+      {
+        name: 'nft_transfer_payout',
+        args: [
+          { name: 'receiver_id', type: 'string' },
+          { name: 'token_id', type: 'string' },
+          { name: 'approval_id', type: 'number' },
+          { name: 'balance', type: 'string' },
+          { name: 'max_len_payout', type: 'number' },
         ],
       },
     ],
