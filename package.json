@@ -37,6 +37,6 @@
     "uglify-js": "^3.15.0"
   },
   "dependencies": {
-    "@webassemblyjs/wasm-parser": "^1.11.1"
+    "@webassemblyjs/wasm-parser": "1.11.1"
   }
 }
