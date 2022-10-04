@@ -33,143 +33,204 @@
 
 	(function (exports) {
 	var _a;
-	Object.defineProperty(exports, '__esModule', { value: true });
+	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.interfaces = exports.StandardInterfaceId = void 0;
 	var StandardInterfaceId;
 	(function (StandardInterfaceId) {
-	  StandardInterfaceId['NEP141'] = 'nep141';
-	  StandardInterfaceId['NEP148'] = 'nep148';
-	  StandardInterfaceId['NEP171'] = 'nep171';
-	  StandardInterfaceId['NEP177'] = 'nep177';
-	  StandardInterfaceId['NEP178'] = 'nep178';
-	})(
-	  (StandardInterfaceId =
-	    exports.StandardInterfaceId || (exports.StandardInterfaceId = {})),
-	);
+	    StandardInterfaceId["NEP141"] = "nep141";
+	    StandardInterfaceId["NEP145"] = "nep145";
+	    StandardInterfaceId["NEP148"] = "nep148";
+	    StandardInterfaceId["NEP171"] = "nep171";
+	    StandardInterfaceId["NEP177"] = "nep177";
+	    StandardInterfaceId["NEP178"] = "nep178";
+	    StandardInterfaceId["NEP199"] = "nep199";
+	    StandardInterfaceId["NEP330"] = "nep330";
+	})(StandardInterfaceId = exports.StandardInterfaceId || (exports.StandardInterfaceId = {}));
 	/**
 	 * Mapping interface ID to interface specification
 	 */
-	exports.interfaces = Object.freeze(
-	  ((_a = {}),
-	  (_a[StandardInterfaceId.NEP141] = {
-	    id: StandardInterfaceId.NEP141,
-	    name: 'FT Core (NEP-141)',
-	    methods: [
-	      {
-	        name: 'ft_transfer',
-	        args: [
-	          { name: 'receiver_id', type: 'string' },
-	          { name: 'amount', type: 'string' },
-	          { name: 'memo', type: ['string', 'null'] },
+	exports.interfaces = Object.freeze((_a = {},
+	    _a[StandardInterfaceId.NEP141] = {
+	        id: StandardInterfaceId.NEP141,
+	        name: 'FT Core (NEP-141)',
+	        methods: [
+	            {
+	                name: 'ft_transfer',
+	                args: [
+	                    { name: 'receiver_id', type: 'string' },
+	                    { name: 'amount', type: 'string' },
+	                    { name: 'memo', type: ['string', 'null'] },
+	                ],
+	            },
+	            {
+	                name: 'ft_transfer_call',
+	                args: [
+	                    { name: 'receiver_id', type: 'string' },
+	                    { name: 'amount', type: 'string' },
+	                    { name: 'memo', type: ['string', 'null'] },
+	                    { name: 'msg', type: 'string' },
+	                ],
+	            },
+	            {
+	                name: 'ft_total_supply',
+	                args: [],
+	            },
+	            {
+	                name: 'ft_balance_of',
+	                args: [{ name: 'account_id', type: 'string' }],
+	            },
 	        ],
-	      },
-	      {
-	        name: 'ft_transfer_call',
-	        args: [
-	          { name: 'receiver_id', type: 'string' },
-	          { name: 'amount', type: 'string' },
-	          { name: 'memo', type: ['string', 'null'] },
-	          { name: 'msg', type: 'string' },
+	    },
+	    _a[StandardInterfaceId.NEP145] = {
+	        id: StandardInterfaceId.NEP145,
+	        name: 'Storage Management (NEP-145)',
+	        methods: [
+	            {
+	                name: 'storage_deposit',
+	                args: [
+	                    { name: 'account_id', type: ['string', 'null'] },
+	                    { name: 'registration_only', type: ['boolean', 'null'] },
+	                ],
+	            },
+	            {
+	                name: 'storage_withdraw',
+	                args: [{ name: 'amount', type: ['string', 'null'] }],
+	            },
+	            {
+	                name: 'storage_unregister',
+	                args: [{ name: 'force', type: ['boolean', 'null'] }],
+	            },
+	            {
+	                name: 'storage_balance_bounds',
+	                args: [],
+	            },
+	            {
+	                name: 'storage_balance_of',
+	                args: [{ name: 'account_id', type: 'string' }],
+	            },
 	        ],
-	      },
-	      {
-	        name: 'ft_total_supply',
-	        args: [],
-	      },
-	      {
-	        name: 'ft_balance_of',
-	        args: [{ name: 'account_id', type: 'string' }],
-	      },
-	    ],
-	  }),
-	  (_a[StandardInterfaceId.NEP148] = {
-	    id: StandardInterfaceId.NEP148,
-	    name: 'FT Metadata (NEP-148)',
-	    methods: [
-	      {
-	        name: 'ft_metadata',
-	        args: [],
-	      },
-	    ],
-	  }),
-	  (_a[StandardInterfaceId.NEP171] = {
-	    id: StandardInterfaceId.NEP171,
-	    name: 'NFT Core (NEP-171)',
-	    methods: [
-	      {
-	        name: 'nft_transfer',
-	        args: [
-	          { name: 'receiver_id', type: 'string' },
-	          { name: 'token_id', type: 'string' },
-	          { name: 'approval_id', type: ['number', 'null'] },
-	          { name: 'memo', type: ['string', 'null'] },
+	    },
+	    _a[StandardInterfaceId.NEP148] = {
+	        id: StandardInterfaceId.NEP148,
+	        name: 'FT Metadata (NEP-148)',
+	        methods: [
+	            {
+	                name: 'ft_metadata',
+	                args: [],
+	            },
 	        ],
-	      },
-	      {
-	        name: 'nft_transfer_call',
-	        args: [
-	          { name: 'receiver_id', type: 'string' },
-	          { name: 'token_id', type: 'string' },
-	          { name: 'approval_id', type: ['number', 'null'] },
-	          { name: 'memo', type: ['string', 'null'] },
-	          { name: 'msg', type: 'string' },
+	    },
+	    _a[StandardInterfaceId.NEP171] = {
+	        id: StandardInterfaceId.NEP171,
+	        name: 'NFT Core (NEP-171)',
+	        methods: [
+	            {
+	                name: 'nft_transfer',
+	                args: [
+	                    { name: 'receiver_id', type: 'string' },
+	                    { name: 'token_id', type: 'string' },
+	                    { name: 'approval_id', type: ['number', 'null'] },
+	                    { name: 'memo', type: ['string', 'null'] },
+	                ],
+	            },
+	            {
+	                name: 'nft_transfer_call',
+	                args: [
+	                    { name: 'receiver_id', type: 'string' },
+	                    { name: 'token_id', type: 'string' },
+	                    { name: 'approval_id', type: ['number', 'null'] },
+	                    { name: 'memo', type: ['string', 'null'] },
+	                    { name: 'msg', type: 'string' },
+	                ],
+	            },
+	            {
+	                name: 'nft_token',
+	                args: [{ name: 'token_id', type: 'string' }],
+	            },
 	        ],
-	      },
-	      {
-	        name: 'nft_token',
-	        args: [{ name: 'token_id', type: 'string' }],
-	      },
-	    ],
-	  }),
-	  (_a[StandardInterfaceId.NEP177] = {
-	    id: StandardInterfaceId.NEP177,
-	    name: 'NFT Metadata (NEP-177)',
-	    methods: [
-	      {
-	        name: 'nft_metadata',
-	        args: [],
-	      },
-	    ],
-	  }),
-	  (_a[StandardInterfaceId.NEP178] = {
-	    id: StandardInterfaceId.NEP178,
-	    name: 'NFT Approval Management (NEP-178)',
-	    methods: [
-	      {
-	        name: 'nft_approve',
-	        args: [
-	          { name: 'token_id', type: 'string' },
-	          { name: 'account_id', type: 'string' },
-	          { name: 'msg', type: ['string', 'null'] },
+	    },
+	    _a[StandardInterfaceId.NEP177] = {
+	        id: StandardInterfaceId.NEP177,
+	        name: 'NFT Metadata (NEP-177)',
+	        methods: [
+	            {
+	                name: 'nft_metadata',
+	                args: [],
+	            },
 	        ],
-	      },
-	      {
-	        name: 'nft_revoke',
-	        args: [
-	          { name: 'token_id', type: 'string' },
-	          { name: 'account_id', type: 'string' },
+	    },
+	    _a[StandardInterfaceId.NEP178] = {
+	        id: StandardInterfaceId.NEP178,
+	        name: 'NFT Approval Management (NEP-178)',
+	        methods: [
+	            {
+	                name: 'nft_approve',
+	                args: [
+	                    { name: 'token_id', type: 'string' },
+	                    { name: 'account_id', type: 'string' },
+	                    { name: 'msg', type: ['string', 'null'] },
+	                ],
+	            },
+	            {
+	                name: 'nft_revoke',
+	                args: [
+	                    { name: 'token_id', type: 'string' },
+	                    { name: 'account_id', type: 'string' },
+	                ],
+	            },
+	            {
+	                name: 'nft_revoke_all',
+	                args: [{ name: 'token_id', type: 'string' }],
+	            },
+	            {
+	                name: 'nft_is_approved',
+	                args: [
+	                    { name: 'token_id', type: 'string' },
+	                    { name: 'approved_account_id', type: 'string' },
+	                    { name: 'approval_id', type: ['number', 'null'] },
+	                ],
+	            },
 	        ],
-	      },
-	      {
-	        name: 'nft_revoke_all',
-	        args: [{ name: 'token_id', type: 'string' }],
-	      },
-	      {
-	        name: 'nft_is_approved',
-	        args: [
-	          { name: 'token_id', type: 'string' },
-	          { name: 'approved_account_id', type: 'string' },
-	          { name: 'approval_id', type: ['number', 'null'] },
+	    },
+	    _a[StandardInterfaceId.NEP199] = {
+	        id: StandardInterfaceId.NEP199,
+	        name: 'Royalties and Payouts (NEP-199)',
+	        methods: [
+	            {
+	                name: 'nft_payout',
+	                args: [
+	                    { name: 'token_id', type: 'string' },
+	                    { name: 'balance', type: 'string' },
+	                    { name: 'max_len_payout', type: 'number' },
+	                ],
+	            },
+	            {
+	                name: 'nft_transfer_payout',
+	                args: [
+	                    { name: 'receiver_id', type: 'string' },
+	                    { name: 'token_id', type: 'string' },
+	                    { name: 'approval_id', type: 'number' },
+	                    { name: 'balance', type: 'string' },
+	                    { name: 'max_len_payout', type: 'number' },
+	                ],
+	            },
 	        ],
-	      },
-	    ],
-	  }),
-	  _a),
-	);
+	    },
+	    _a[StandardInterfaceId.NEP330] = {
+	        id: StandardInterfaceId.NEP330,
+	        name: 'Source Metadata (NEP-330)',
+	        methods: [
+	            {
+	                name: 'contract_source_metadata',
+	                args: [],
+	            },
+	        ],
+	    },
+	    _a));
 
 	}(interfaces));
 
-	Object.defineProperty(getProbableInterfaces$1, '__esModule', { value: true });
+	Object.defineProperty(getProbableInterfaces$1, "__esModule", { value: true });
 	getProbableInterfaces$1.getProbableInterfaces = void 0;
 	var interfaces_1 = interfaces;
 	/**
@@ -181,32 +242,20 @@
 	 *  methods likely constitute which interfaces
 	 */
 	function getProbableInterfaces(methodNames) {
-	  var probableInterfaces = Object.keys(interfaces_1.interfaces).filter(
-	    function (i) {
-	      return interfaces_1.interfaces[i].methods.every(function (m) {
-	        return methodNames.indexOf(m.name) !== -1;
-	      });
-	    },
-	  );
-	  var byMethod = {};
-	  methodNames.forEach(function (methodName) {
-	    byMethod[methodName] = probableInterfaces.filter(function (i) {
-	      return (
-	        interfaces_1.interfaces[i].methods
-	          .map(function (m) {
-	            return m.name;
-	          })
-	          .indexOf(methodName) !== -1
-	      );
+	    var probableInterfaces = Object.keys(interfaces_1.interfaces).filter(function (i) {
+	        return interfaces_1.interfaces[i].methods.every(function (m) { return methodNames.indexOf(m.name) !== -1; });
 	    });
-	  });
-	  return { probableInterfaces: probableInterfaces, byMethod: byMethod };
+	    var byMethod = {};
+	    methodNames.forEach(function (methodName) {
+	        byMethod[methodName] = probableInterfaces.filter(function (i) { return interfaces_1.interfaces[i].methods.map(function (m) { return m.name; }).indexOf(methodName) !== -1; });
+	    });
+	    return { probableInterfaces: probableInterfaces, byMethod: byMethod };
 	}
 	getProbableInterfaces$1.getProbableInterfaces = getProbableInterfaces;
 
 	var JsonType = {};
 
-	Object.defineProperty(JsonType, '__esModule', { value: true });
+	Object.defineProperty(JsonType, "__esModule", { value: true });
 
 	var methods = {};
 
@@ -6194,8 +6243,8 @@
 
 	var require$$0 = /*@__PURE__*/getAugmentedNamespace(esm);
 
-	Object.defineProperty(parseWasm$1, '__esModule', { value: true });
-	parseWasm$1.parseWasm = parseWasm$1.base64StringToUint8Array = void 0;
+	Object.defineProperty(parseWasm$1, "__esModule", { value: true });
+	parseWasm$1.parseWasm = void 0;
 	var wasm_parser_1 = require$$0;
 	/**
 	 * Converts a base64-encoded string to a byte array. Works in browser and Node
@@ -6205,21 +6254,17 @@
 	 * @returns Decoded byte array
 	 */
 	function base64StringToUint8Array(strb64) {
-	  if (typeof Buffer !== 'undefined') {
-	    // Node
-	    return Buffer.from(strb64, 'base64');
-	  } else {
-	    // Browser
-	    return new Uint8Array(
-	      atob(strb64.toString().trim())
-	        .split('')
-	        .map(function (c) {
-	          return c.charCodeAt(0);
-	        }),
-	    );
-	  }
+	    if (typeof Buffer !== 'undefined') {
+	        // Node
+	        return Buffer.from(strb64, 'base64');
+	    }
+	    else {
+	        // Browser
+	        return new Uint8Array(atob(strb64.toString().trim())
+	            .split('')
+	            .map(function (c) { return c.charCodeAt(0); }));
+	    }
 	}
-	parseWasm$1.base64StringToUint8Array = base64StringToUint8Array;
 	/**
 	 * Parse base64-encoded WASM into AST
 	 *
@@ -6227,11 +6272,11 @@
 	 * @returns WASM abstract syntax tree
 	 */
 	function parseWasm(wasmb64) {
-	  return (0, wasm_parser_1.decode)(base64StringToUint8Array(wasmb64));
+	    return (0, wasm_parser_1.decode)(base64StringToUint8Array(wasmb64));
 	}
 	parseWasm$1.parseWasm = parseWasm;
 
-	Object.defineProperty(methods, '__esModule', { value: true });
+	Object.defineProperty(methods, "__esModule", { value: true });
 	methods.getMethodNames = void 0;
 	var parseWasm_1 = parseWasm$1;
 	/**
@@ -6242,76 +6287,53 @@
 	 * @returns List of exported function names
 	 */
 	function getMethodNames(code_base64) {
-	  var ast = (0, parseWasm_1.parseWasm)(code_base64);
-	  return ast.body[0].fields
-	    .filter(function (x) {
-	      return x.type === 'ModuleExport' && x.descr.exportType === 'Func';
-	    })
-	    .map(function (x) {
-	      return x.name;
-	    });
+	    var ast = (0, parseWasm_1.parseWasm)(code_base64);
+	    return ast.body[0].fields
+	        .filter(function (x) { return x.type === 'ModuleExport' && x.descr.exportType === 'Func'; })
+	        .map(function (x) { return x.name; });
 	}
 	methods.getMethodNames = getMethodNames;
 
 	var parseContract$1 = {};
 
-	var __assign =
-	  (commonjsGlobal && commonjsGlobal.__assign) ||
-	  function () {
-	    __assign =
-	      Object.assign ||
-	      function (t) {
+	var __assign = (commonjsGlobal && commonjsGlobal.__assign) || function () {
+	    __assign = Object.assign || function(t) {
 	        for (var s, i = 1, n = arguments.length; i < n; i++) {
-	          s = arguments[i];
-	          for (var p in s)
-	            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+	                t[p] = s[p];
 	        }
 	        return t;
-	      };
+	    };
 	    return __assign.apply(this, arguments);
-	  };
-	Object.defineProperty(parseContract$1, '__esModule', { value: true });
+	};
+	Object.defineProperty(parseContract$1, "__esModule", { value: true });
 	parseContract$1.parseContract = void 0;
 	var getProbableInterfaces_1 = getProbableInterfaces$1;
 	var methods_1 = methods;
 	function parseContract(code_base64) {
-	  var methodNames = (0, methods_1.getMethodNames)(code_base64);
-	  var probableInterfaces = (0, getProbableInterfaces_1.getProbableInterfaces)(
-	    methodNames,
-	  );
-	  return __assign({ methodNames: methodNames }, probableInterfaces);
+	    var methodNames = (0, methods_1.getMethodNames)(code_base64);
+	    var probableInterfaces = (0, getProbableInterfaces_1.getProbableInterfaces)(methodNames);
+	    return __assign({ methodNames: methodNames }, probableInterfaces);
 	}
 	parseContract$1.parseContract = parseContract;
 
 	var ParsedContract = {};
 
-	Object.defineProperty(ParsedContract, '__esModule', { value: true });
+	Object.defineProperty(ParsedContract, "__esModule", { value: true });
 
 	(function (exports) {
-	var __createBinding =
-	  (commonjsGlobal && commonjsGlobal.__createBinding) ||
-	  (Object.create
-	    ? function (o, m, k, k2) {
-	        if (k2 === undefined) k2 = k;
-	        Object.defineProperty(o, k2, {
-	          enumerable: true,
-	          get: function () {
-	            return m[k];
-	          },
-	        });
-	      }
-	    : function (o, m, k, k2) {
-	        if (k2 === undefined) k2 = k;
-	        o[k2] = m[k];
-	      });
-	var __exportStar =
-	  (commonjsGlobal && commonjsGlobal.__exportStar) ||
-	  function (m, exports) {
-	    for (var p in m)
-	      if (p !== 'default' && !Object.prototype.hasOwnProperty.call(exports, p))
-	        __createBinding(exports, m, p);
-	  };
-	Object.defineProperty(exports, '__esModule', { value: true });
+	var __createBinding = (commonjsGlobal && commonjsGlobal.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __exportStar = (commonjsGlobal && commonjsGlobal.__exportStar) || function(m, exports) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+	};
+	Object.defineProperty(exports, "__esModule", { value: true });
 	__exportStar(getProbableInterfaces$1, exports);
 	__exportStar(interfaces, exports);
 	__exportStar(JsonType, exports);

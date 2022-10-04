@@ -1,5 +1,8 @@
 # NEAR Contract Parser
 
+[![](https://img.shields.io/github/stars/NEARFoundation/near-contract-parser)](https://github.com/NEARFoundation/near-contract-parser)
+[![](https://img.shields.io/npm/dt/near-contract-parser)](https://www.npmjs.com/package/near-contract-parser)
+
 Collection of utilities for parsing base64-encoded WASM smart contracts on [NEAR Protocol](https://near.org), extracting exported members, and detecting likely candidates for [standard contract interface implementation](https://nomicon.io/Standards/README.html).
 
 # Usage
