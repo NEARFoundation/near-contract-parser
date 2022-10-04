@@ -1,6 +1,6 @@
 {
   "name": "near-contract-parser",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Parse NEAR smart contract WASM code.",
   "main": "lib/index.js",
   "files": [
