@@ -1,6 +1,6 @@
 {
   "name": "near-contract-parser",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "Parse NEAR smart contract WASM code.",
   "repository": {
     "type": "git",
