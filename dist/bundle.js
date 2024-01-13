@@ -1,6 +1,3 @@
-var $8zHUo$buffer = require("buffer");
-var $8zHUo$webassemblyjswasmparser = require("@webassemblyjs/wasm-parser");
-
 
 function $parcel$exportWildcard(dest, source) {
   Object.keys(source).forEach(function(key) {
@@ -407,65 +404,49 @@ var $db46ee7cdb093ccd$exports = {};
  * Data types supported by JSON format
  */ 
 
-var $87a6f453985ea27a$exports = {};
-
-$parcel$export($87a6f453985ea27a$exports, "getMethodNames", () => $87a6f453985ea27a$export$236594f7f03ae3c9);
-var $35fc1413ec66129a$exports = {};
-
-$parcel$export($35fc1413ec66129a$exports, "parseWasm", () => $35fc1413ec66129a$export$309a74ef59ec55db);
-
-var $35fc1413ec66129a$require$Buffer = $8zHUo$buffer.Buffer;
-
-var $35fc1413ec66129a$require$decode = $8zHUo$webassemblyjswasmparser.decode;
-/**
- * Converts a base64-encoded string to a byte array. Works in browser and Node
- * environments.
- *
- * @param strb64 base64 string
- * @returns Decoded byte array
- */ function $35fc1413ec66129a$var$base64StringToUint8Array(strb64) {
-    if (typeof $35fc1413ec66129a$require$Buffer !== "undefined") // Node
-    return $35fc1413ec66129a$require$Buffer.from(strb64, "base64");
-    else // Browser
-    return new Uint8Array(atob(strb64.toString().trim()).split("").map((c)=>c.charCodeAt(0)));
-}
-function $35fc1413ec66129a$export$309a74ef59ec55db(wasmb64) {
-    return $35fc1413ec66129a$require$decode($35fc1413ec66129a$var$base64StringToUint8Array(wasmb64));
-}
-
-
-function $87a6f453985ea27a$export$236594f7f03ae3c9(code_base64) {
-    const ast = (0, $35fc1413ec66129a$export$309a74ef59ec55db)(code_base64);
-    return ast.body[0].fields.filter((x)=>x.type === "ModuleExport" && x.descr.exportType === "Func").map((x)=>x.name);
-}
-
-
 var $db830ac2df7d653c$exports = {};
 
 $parcel$export($db830ac2df7d653c$exports, "parseContract", () => $db830ac2df7d653c$export$326d4dd2b9ef7090);
 
-
-function $db830ac2df7d653c$export$326d4dd2b9ef7090(code_base64) {
-    const methodNames = (0, $87a6f453985ea27a$export$236594f7f03ae3c9)(code_base64);
+async function $db830ac2df7d653c$export$326d4dd2b9ef7090(wasmBase64) {
+    const bytes = $db830ac2df7d653c$var$base64StringToUint8Array(wasmBase64);
+    const module = await WebAssembly.compile(bytes);
+    const methodNames = await $db830ac2df7d653c$var$exportedFunctionNames(module);
     const probableInterfaces = (0, $017fb6392d42fa6a$export$b351edbeb0c38b0c)(methodNames);
     return {
         methodNames: methodNames,
         ...probableInterfaces
     };
 }
+/**
+ * Converts a base64-encoded string to a byte array. Works in browser and Node
+ * environments.
+ *
+ * @param strb64 base64 string
+ * @returns Decoded byte array
+ */ function $db830ac2df7d653c$var$base64StringToUint8Array(strb64) {
+    return new Uint8Array(atob(strb64.toString().trim()).split("").map((c)=>c.charCodeAt(0)));
+}
+/**
+ * Retrieves the names of all exported functions from a WebAssembly module.
+ *
+ * @param {WebAssembly.Module} module - The WebAssembly module to extract the exported function names from.
+ * @return {Promise<string[]>} An array of strings containing the names of all exported functions.
+ */ async function $db830ac2df7d653c$var$exportedFunctionNames(module) {
+    const exports = WebAssembly.Module.exports(module);
+    const exportedFunctionNames = exports.filter((e)=>e.kind === "function").map((e)=>e.name);
+    return exportedFunctionNames;
+}
 
 
 var $42af6d254e81e8c2$exports = {};
 
 
-
 $parcel$exportWildcard(module.exports, $017fb6392d42fa6a$exports);
 $parcel$exportWildcard(module.exports, $b6a0e74e5dac6e12$exports);
 $parcel$exportWildcard(module.exports, $db46ee7cdb093ccd$exports);
-$parcel$exportWildcard(module.exports, $87a6f453985ea27a$exports);
 $parcel$exportWildcard(module.exports, $db830ac2df7d653c$exports);
 $parcel$exportWildcard(module.exports, $42af6d254e81e8c2$exports);
-$parcel$exportWildcard(module.exports, $35fc1413ec66129a$exports);
 
 
 //# sourceMappingURL=bundle.js.map

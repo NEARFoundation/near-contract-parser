@@ -13,8 +13,9 @@
     "prepare": "husky install",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
-    "build": "parcel build --no-cache",
-    "test": "echo \"No tests specified\""
+    "build": "parcel build",
+    "watch": "parcel watch",
+    "test": "jest"
   },
   "keywords": [
     "near",
@@ -25,20 +26,18 @@
     "webassembly",
     "wasm"
   ],
-  "author": "Jacob Lindahl <jacob@near.foundation>",
+  "author": "Jacob Lindahl <jacob.lindahl@near.org>",
   "license": "MIT",
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@parcel/packager-ts": "^2.11.0",
     "@parcel/transformer-typescript-types": "^2.11.0",
-    "@types/node": "^20.11.0",
     "husky": "^7.0.4",
     "jest": "^29.7.0",
     "lint-staged": "^12.1.3",
     "parcel": "^2.11.0",
     "prettier": "^2.5.1",
+    "ts-jest": "^29.1.1",
     "typescript": "^4.5.4"
-  },
-  "dependencies": {
-    "@webassemblyjs/wasm-parser": "^1.11.1"
   }
 }

@@ -51,21 +51,6 @@ export function getProbableInterfaces(methodNames: string[]): {
     probableInterfaces: StandardInterfaceId[];
     byMethod: Record<string, StandardInterfaceId[]>;
 };
-/**
- * Parse base64-encoded WASM into AST
- *
- * @param wasmb64 base64-encoded WASM binary
- * @returns WASM abstract syntax tree
- */
-export function parseWasm(wasmb64: string): any;
-/**
- * Extracts exported functions from smart contract
- *
- * @param code_base64 Base64-encoded WASM binary (e.g. obtained from
- *  `near-api-js`)
- * @returns List of exported function names
- */
-export function getMethodNames(code_base64: string): string[];
 export interface ParsedContract {
     /**
      * Standard interfaces the original contract is likely to support
@@ -80,6 +65,6 @@ export interface ParsedContract {
      */
     methodNames: string[];
 }
-export function parseContract(code_base64: string): ParsedContract;
+export function parseContract(wasmBase64: string): Promise<ParsedContract>;
 
 //# sourceMappingURL=bundle.d.ts.map
