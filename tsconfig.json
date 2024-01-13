@@ -4,9 +4,9 @@
     "module": "CommonJS",
     "declaration": true,
     "strict": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "outDir": "lib"
+    "allowJs": true,
+    "noEmit": true,
+    "types": ["node"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]

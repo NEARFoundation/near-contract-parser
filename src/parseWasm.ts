@@ -1,4 +1,4 @@
-import { decode } from '@webassemblyjs/wasm-parser';
+const { decode } = require('@webassemblyjs/wasm-parser');
 
 /**
  * Converts a base64-encoded string to a byte array. Works in browser and Node
