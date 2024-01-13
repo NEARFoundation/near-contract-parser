@@ -1,0 +1,8 @@
+node_modules
+.parcel-cache
+tests
+jest.config.js
+prettier.config.js
+.prettierignore
+lint-staged.config.js
+.husky
