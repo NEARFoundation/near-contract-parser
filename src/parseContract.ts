@@ -5,8 +5,8 @@ export async function parseContract(
   wasmBase64: string,
 ): Promise<ParsedContract> {
   const bytes = base64StringToUint8Array(wasmBase64);
-  const module = await WebAssembly.compile(bytes);
-  const methodNames = await exportedFunctionNames(module);
+  const wasmModule = await WebAssembly.compile(bytes);
+  const methodNames = await exportedFunctionNames(wasmModule);
   const probableInterfaces = getProbableInterfaces(methodNames);
 
   return {
@@ -33,13 +33,13 @@ function base64StringToUint8Array(strb64: string): Uint8Array {
 /**
  * Retrieves the names of all exported functions from a WebAssembly module.
  *
- * @param {WebAssembly.Module} module - The WebAssembly module to extract the exported function names from.
+ * @param {WebAssembly.Module} wasmModule - The WebAssembly module to extract the exported function names from.
  * @return {Promise<string[]>} An array of strings containing the names of all exported functions.
  */
 async function exportedFunctionNames(
-  module: WebAssembly.Module,
+  wasmModule: WebAssembly.Module,
 ): Promise<string[]> {
-  const exports = WebAssembly.Module.exports(module);
+  const exports = WebAssembly.Module.exports(wasmModule);
 
   const exportedFunctionNames = exports
     .filter(e => e.kind === 'function')

@@ -1,32 +1,15 @@
 
-function $parcel$exportWildcard(dest, source) {
-  Object.keys(source).forEach(function(key) {
-    if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) {
-      return;
-    }
-
-    Object.defineProperty(dest, key, {
-      enumerable: true,
-      get: function get() {
-        return source[key];
-      }
-    });
-  });
-
-  return dest;
-}
-
 function $parcel$export(e, n, v, s) {
   Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
 }
-var $9a72f76b8c599aaa$exports = {};
+var $8301a56bee88331f$exports = {};
 
-$parcel$export($9a72f76b8c599aaa$exports, "getProbableInterfaces", function () { return $9a72f76b8c599aaa$export$b351edbeb0c38b0c; });
-var $82c8e41b6d1c6b83$exports = {};
+$parcel$export($8301a56bee88331f$exports, "getProbableInterfaces", function () { return $8301a56bee88331f$export$b351edbeb0c38b0c; });
+var $30d3da9d5bab9f1b$exports = {};
 
-$parcel$export($82c8e41b6d1c6b83$exports, "StandardInterfaceId", function () { return $82c8e41b6d1c6b83$export$94bf4ff490ded96e; });
-$parcel$export($82c8e41b6d1c6b83$exports, "interfaces", function () { return $82c8e41b6d1c6b83$export$bc1125d123d9fc6; });
-var $82c8e41b6d1c6b83$export$94bf4ff490ded96e;
+$parcel$export($30d3da9d5bab9f1b$exports, "StandardInterfaceId", function () { return $30d3da9d5bab9f1b$export$94bf4ff490ded96e; });
+$parcel$export($30d3da9d5bab9f1b$exports, "interfaces", function () { return $30d3da9d5bab9f1b$export$bc1125d123d9fc6; });
+var $30d3da9d5bab9f1b$export$94bf4ff490ded96e;
 (function(StandardInterfaceId) {
     StandardInterfaceId["NEP141"] = "nep141";
     StandardInterfaceId["NEP145"] = "nep145";
@@ -36,8 +19,8 @@ var $82c8e41b6d1c6b83$export$94bf4ff490ded96e;
     StandardInterfaceId["NEP178"] = "nep178";
     StandardInterfaceId["NEP199"] = "nep199";
     StandardInterfaceId["NEP330"] = "nep330";
-})($82c8e41b6d1c6b83$export$94bf4ff490ded96e || ($82c8e41b6d1c6b83$export$94bf4ff490ded96e = {}));
-const $82c8e41b6d1c6b83$export$bc1125d123d9fc6 = Object.freeze({
+})($30d3da9d5bab9f1b$export$94bf4ff490ded96e || ($30d3da9d5bab9f1b$export$94bf4ff490ded96e = {}));
+const $30d3da9d5bab9f1b$export$bc1125d123d9fc6 = Object.freeze({
     ["nep141"]: {
         id: "nep141",
         name: "FT Core (NEP-141)",
@@ -385,11 +368,11 @@ const $82c8e41b6d1c6b83$export$bc1125d123d9fc6 = Object.freeze({
 });
 
 
-function $9a72f76b8c599aaa$export$b351edbeb0c38b0c(methodNames) {
-    const probableInterfaces = Object.keys((0, $82c8e41b6d1c6b83$export$bc1125d123d9fc6)).filter((i)=>(0, $82c8e41b6d1c6b83$export$bc1125d123d9fc6)[i].methods.every((m)=>methodNames.indexOf(m.name) !== -1));
+function $8301a56bee88331f$export$b351edbeb0c38b0c(methodNames) {
+    const probableInterfaces = Object.keys((0, $30d3da9d5bab9f1b$export$bc1125d123d9fc6)).filter((i)=>(0, $30d3da9d5bab9f1b$export$bc1125d123d9fc6)[i].methods.every((m)=>methodNames.indexOf(m.name) !== -1));
     const byMethod = {};
     methodNames.forEach((methodName)=>{
-        byMethod[methodName] = probableInterfaces.filter((i)=>(0, $82c8e41b6d1c6b83$export$bc1125d123d9fc6)[i].methods.map((m)=>m.name).indexOf(methodName) !== -1);
+        byMethod[methodName] = probableInterfaces.filter((i)=>(0, $30d3da9d5bab9f1b$export$bc1125d123d9fc6)[i].methods.map((m)=>m.name).indexOf(methodName) !== -1);
     });
     return {
         probableInterfaces: probableInterfaces,
@@ -399,20 +382,20 @@ function $9a72f76b8c599aaa$export$b351edbeb0c38b0c(methodNames) {
 
 
 
-var $a9c28d60919e4e65$exports = {};
+var $0096a15788e4b6e3$exports = {};
 /**
  * Data types supported by JSON format
  */ 
 
-var $d151980726130bd9$exports = {};
+var $eba7685fd792abc0$exports = {};
 
-$parcel$export($d151980726130bd9$exports, "parseContract", function () { return $d151980726130bd9$export$326d4dd2b9ef7090; });
+$parcel$export($eba7685fd792abc0$exports, "parseContract", function () { return $eba7685fd792abc0$export$326d4dd2b9ef7090; });
 
-async function $d151980726130bd9$export$326d4dd2b9ef7090(wasmBase64) {
-    const bytes = $d151980726130bd9$var$base64StringToUint8Array(wasmBase64);
+async function $eba7685fd792abc0$export$326d4dd2b9ef7090(wasmBase64) {
+    const bytes = $eba7685fd792abc0$var$base64StringToUint8Array(wasmBase64);
     const wasmModule = await WebAssembly.compile(bytes);
-    const methodNames = await $d151980726130bd9$var$exportedFunctionNames(wasmModule);
-    const probableInterfaces = (0, $9a72f76b8c599aaa$export$b351edbeb0c38b0c)(methodNames);
+    const methodNames = await $eba7685fd792abc0$var$exportedFunctionNames(wasmModule);
+    const probableInterfaces = (0, $8301a56bee88331f$export$b351edbeb0c38b0c)(methodNames);
     return {
         methodNames: methodNames,
         ...probableInterfaces
@@ -424,7 +407,7 @@ async function $d151980726130bd9$export$326d4dd2b9ef7090(wasmBase64) {
  *
  * @param strb64 base64 string
  * @returns Decoded byte array
- */ function $d151980726130bd9$var$base64StringToUint8Array(strb64) {
+ */ function $eba7685fd792abc0$var$base64StringToUint8Array(strb64) {
     return new Uint8Array(atob(strb64.toString().trim()).split("").map((c)=>c.charCodeAt(0)));
 }
 /**
@@ -432,21 +415,17 @@ async function $d151980726130bd9$export$326d4dd2b9ef7090(wasmBase64) {
  *
  * @param {WebAssembly.Module} wasmModule - The WebAssembly module to extract the exported function names from.
  * @return {Promise<string[]>} An array of strings containing the names of all exported functions.
- */ async function $d151980726130bd9$var$exportedFunctionNames(wasmModule) {
+ */ async function $eba7685fd792abc0$var$exportedFunctionNames(wasmModule) {
     const exports = WebAssembly.Module.exports(wasmModule);
     const exportedFunctionNames = exports.filter((e)=>e.kind === "function").map((e)=>e.name);
     return exportedFunctionNames;
 }
 
 
-var $671d8eed8033b627$exports = {};
+var $4faef76cdc67f746$exports = {};
 
 
-$parcel$exportWildcard(module.exports, $9a72f76b8c599aaa$exports);
-$parcel$exportWildcard(module.exports, $82c8e41b6d1c6b83$exports);
-$parcel$exportWildcard(module.exports, $a9c28d60919e4e65$exports);
-$parcel$exportWildcard(module.exports, $d151980726130bd9$exports);
-$parcel$exportWildcard(module.exports, $671d8eed8033b627$exports);
 
 
-//# sourceMappingURL=bundle.js.map
+export {$8301a56bee88331f$export$b351edbeb0c38b0c as getProbableInterfaces, $30d3da9d5bab9f1b$export$94bf4ff490ded96e as StandardInterfaceId, $30d3da9d5bab9f1b$export$bc1125d123d9fc6 as interfaces, $eba7685fd792abc0$export$326d4dd2b9ef7090 as parseContract};
+//# sourceMappingURL=bundle.mjs.map
